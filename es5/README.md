@@ -120,6 +120,7 @@
         type: 'alien'
     };
     ```
+  - Use camelCase when naming properties of objects, including methods. Properties and methods that should be regarded as private to the object should be named using _camelCase (i.e. with a leading underscore).
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1426,8 +1427,8 @@
 
 
 ## Modules
-
-  - The file should be named with kebab-case.
+  - Always declare `'use strict';` at the top of the module.
+  - The file containing a module should be named with kebab-case.
 
 **[⬆ back to top](#table-of-contents)**
 
