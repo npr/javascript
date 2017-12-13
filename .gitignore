@@ -1,6 +1,7 @@
 # gitignore
 
 node_modules
+.idea
 
 # Only apps should have lockfiles
 yarn.lock
