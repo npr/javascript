@@ -110,10 +110,15 @@ module.exports = {
 
     // Prefer destructuring from arrays and objects
     // http://eslint.org/docs/rules/prefer-destructuring
-    // TODO: enable
-    'prefer-destructuring': ['off', {
-      array: true,
-      object: true,
+    'prefer-destructuring': ['error', {
+      VariableDeclarator: {
+        array: false,
+        object: true,
+      },
+      AssignmentExpression: {
+        array: true,
+        object: true,
+      },
     }, {
       enforceForRenamedProperties: false,
     }],
@@ -124,7 +129,6 @@ module.exports = {
 
     // suggest using Reflect methods where applicable
     // http://eslint.org/docs/rules/prefer-reflect
-    // TODO: enable?
     'prefer-reflect': 'off',
 
     // use rest parameters instead of arguments

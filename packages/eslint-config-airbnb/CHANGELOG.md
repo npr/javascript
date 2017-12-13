@@ -1,3 +1,40 @@
+16.1.0 / 2017-10-16
+==================
+- [deps] update `eslint-config-airbnb-base`, `eslint` to v4.9
+
+16.0.0 / 2017-10-06
+==================
+- [breaking] [deps] require `eslint` `v4`, update `eslint-config-airbnb-base`
+- [breaking] [deps] Upgrade `eslint-plugin-jsx-a11y` to `v6`; enable more a11y rules (#1482)
+- [breaking] enable/add react rules: `react/jsx-curly-brace-presence`, `react/no-typos`, `react/no-unused-state`, `react/no-redundant-should-component-update`, `react/default-props-match-prop-types`
+- [new] add `propWrapperFunctions` default settings for `eslint-plugin-react`
+- [new] Enable `react/jsx-closing-tag-location` (#1533)
+- [deps] update `eslint` v4, `eslint-plugin-react`, `tape`
+- [docs] Specify yarn-specific install instructions (#1511)
+
+15.1.0 / 2017-07-24
+==================
+- [deps] allow eslint v3 or v4 (#1447)
+- [deps] update `eslint-plugin-import`, `eslint-config-airbnb-base`
+
+15.0.2 / 2017-07-04
+==================
+- [fix] jsx should be enabled via parserOptions, not via a root ecmaFeatures
+- [deps] update `babel-preset-airbnb`, `eslint-find-rules`, `eslint-plugin-import`, `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `tape`
+
+15.0.1 / 2017-05-15
+==================
+- [fix] set default React version to 15.0 (#1415)
+
+15.0.0 / 2017-05-14
+==================
+- [breaking] set default React version to 0.15
+- [breaking] `update eslint-plugin-jsx-a11y` to v5, enable new rules
+- [breaking] `update eslint-plugin-react` to v7, enable new rules
+- [minor] enable rules: `jsx-max-props-per-line`, `void-dom-elements-no-children`
+- [patch] Turn `ignorePureComponents` option on for react/prefer-stateless-function (#1378, #1398)
+- [deps] update `eslint`, `eslint-plugin-react`, `eslint-config-airbnb-base`
+
 14.1.0 / 2017-02-05
 ==================
 - [patch] allow `eslint-plugin-jsx-a11y` to be v3 or v4. Remove `no-marquee` rule temporarily.

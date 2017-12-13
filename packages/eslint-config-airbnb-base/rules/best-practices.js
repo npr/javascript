@@ -57,7 +57,9 @@ module.exports = {
     'no-div-regex': 'off',
 
     // disallow else after a return in an if
-    'no-else-return': 'error',
+    // https://eslint.org/docs/rules/no-else-return
+    // TODO: semver-major, set allowElseIf to false
+    'no-else-return': ['error', { allowElseIf: true }],
 
     // disallow empty functions, except for standalone funcs/arrows
     // http://eslint.org/docs/rules/no-empty-function
@@ -142,7 +144,9 @@ module.exports = {
     }],
 
     // disallow use of multiple spaces
-    'no-multi-spaces': 'error',
+    'no-multi-spaces': ['error', {
+      ignoreEOLComments: false,
+    }],
 
     // disallow use of multiline strings
     'no-multi-str': 'error',
@@ -164,9 +168,21 @@ module.exports = {
     'no-octal-escape': 'error',
 
     // disallow reassignment of function parameters
-    // disallow parameter object manipulation
+    // disallow parameter object manipulation except for specific exclusions
     // rule: http://eslint.org/docs/rules/no-param-reassign.html
-    'no-param-reassign': ['error', { props: true }],
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'acc', // for reduce accumulators
+        'e', // for e.returnvalue
+        'ctx', // for Koa routing
+        'req', // for Express requests
+        'request', // for Express requests
+        'res', // for Express responses
+        'response', // for Express responses
+        '$scope', // for Angular 1 scopes
+      ]
+    }],
 
     // disallow usage of __proto__ property
     'no-proto': 'error',
@@ -181,6 +197,30 @@ module.exports = {
       property: 'callee',
       message: 'arguments.callee is deprecated',
     }, {
+      object: 'global',
+      property: 'isFinite',
+      message: 'Please use Number.isFinite instead',
+    }, {
+      object: 'self',
+      property: 'isFinite',
+      message: 'Please use Number.isFinite instead',
+    }, {
+      object: 'window',
+      property: 'isFinite',
+      message: 'Please use Number.isFinite instead',
+    }, {
+      object: 'global',
+      property: 'isNaN',
+      message: 'Please use Number.isNaN instead',
+    }, {
+      object: 'self',
+      property: 'isNaN',
+      message: 'Please use Number.isNaN instead',
+    }, {
+      object: 'window',
+      property: 'isNaN',
+      message: 'Please use Number.isNaN instead',
+    }, {
       property: '__defineGetter__',
       message: 'Please use Object.defineProperty instead.',
     }, {
@@ -193,7 +233,7 @@ module.exports = {
     }],
 
     // disallow use of assignment in return statement
-    'no-return-assign': 'error',
+    'no-return-assign': ['error', 'always'],
 
     // disallow redundant `return await`
     'no-return-await': 'error',
@@ -222,6 +262,7 @@ module.exports = {
     'no-unused-expressions': ['error', {
       allowShortCircuit: false,
       allowTernary: false,
+      allowTaggedTemplates: false,
     }],
 
     // disallow unused labels
@@ -255,8 +296,7 @@ module.exports = {
 
     // require using Error objects as Promise rejection reasons
     // http://eslint.org/docs/rules/prefer-promise-reject-errors
-    // TODO: enable, semver-major
-    'prefer-promise-reject-errors': ['off', { allowEmptyReject: true }],
+    'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
 
     // require use of the second argument for parseInt()
     radix: 'error',
