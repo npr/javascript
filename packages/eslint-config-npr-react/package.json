@@ -1,0 +1,46 @@
+{
+    "name": "@npr/eslint-config-npr-react",
+    "version": "16.1.0",
+    "description": "NPR's React style guide for JavaScript",
+    "main": "index.js",
+    "scripts": {
+        "prelint": "editorconfig-tools check * rules/* test/*",
+        "lint": "eslint --report-unused-disable-directives .",
+        "tests-only": "babel-tape-runner ./test/test-*.js",
+        "prepublish": "(in-install || eslint-find-rules --unused) && (not-in-publish || npm test)",
+        "pretest": "npm run --silent lint",
+        "test": "npm run --silent tests-only"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npr/javascript.git"
+    },
+    "keywords": [
+        "javascript",
+        "style"
+    ],
+    "author": "Stephen Thompson <apostrophest@gmail.com>",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/npr/javascript/issues"
+    },
+    "homepage": "https://github.com/npr/javascript#readme",
+    "devDependencies": {
+        "babel-preset-airbnb": "^2.4.0",
+        "babel-tape-runner": "^2.0.1",
+        "editorconfig-tools": "^0.1.1",
+        "eslint": "^4.9.0",
+        "eslint-find-rules": "^3.1.1",
+        "eslint-plugin-import": "^2.7.0",
+        "in-publish": "^2.0.0",
+        "safe-publish-latest": "^1.1.1",
+        "tape": "^4.8.0"
+    },
+    "engines": {
+        "node": ">= 6"
+    },
+    "dependencies": {
+        "@npr/eslint-config-npr-base": "^12.1.0",
+        "eslint-config-airbnb": "^16.1.0"
+    }
+}
