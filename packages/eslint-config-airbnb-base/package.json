@@ -1,18 +1,18 @@
 {
-  "name": "eslint-config-airbnb",
-  "version": "16.1.0",
-  "description": "Airbnb's ESLint config, following our styleguide",
+  "name": "eslint-config-airbnb-base",
+  "version": "12.1.0",
+  "description": "Airbnb's base JS ESLint config, following our styleguide",
   "main": "index.js",
   "scripts": {
     "prelint": "editorconfig-tools check * rules/* test/*",
-    "lint": "eslint .",
+    "lint": "eslint --report-unused-disable-directives .",
     "tests-only": "babel-tape-runner ./test/test-*.js",
     "prepublish": "(in-install || eslint-find-rules --unused) && (not-in-publish || npm test) && safe-publish-latest",
     "pretest": "npm run --silent lint",
     "test": "npm run --silent tests-only",
-    "pretravis": "cd ../eslint-config-airbnb-base && npm install && npm link && cd - && npm link --no-save eslint-config-airbnb-base",
+    "pretravis": ":",
     "travis": "npm run --silent test",
-    "posttravis": "npm unlink eslint-config-airbnb-base >/dev/null &"
+    "posttravis": ":"
   },
   "repository": {
     "type": "git",
@@ -47,9 +47,6 @@
     "url": "https://github.com/airbnb/javascript/issues"
   },
   "homepage": "https://github.com/airbnb/javascript",
-  "dependencies": {
-    "eslint-config-airbnb-base": "^12.1.0"
-  },
   "devDependencies": {
     "babel-preset-airbnb": "^2.4.0",
     "babel-tape-runner": "^2.0.1",
@@ -57,20 +54,18 @@
     "eslint": "^4.9.0",
     "eslint-find-rules": "^3.1.1",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
     "in-publish": "^2.0.0",
-    "react": ">= 0.13.0",
     "safe-publish-latest": "^1.1.1",
     "tape": "^4.8.0"
   },
   "peerDependencies": {
     "eslint": "^4.9.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-import": "^2.7.0"
   },
   "engines": {
     "node": ">= 4"
+  },
+  "dependencies": {
+    "eslint-restricted-globals": "^0.1.1"
   }
 }
