@@ -1,6 +1,6 @@
 {
     "name": "@npr/eslint-config-npr-react",
-    "version": "16.1.0",
+    "version": "16.1.1",
     "description": "NPR's React style guide for JavaScript",
     "main": "index.js",
     "scripts": {

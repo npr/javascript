@@ -5,7 +5,7 @@ module.exports = {
         'react/jsx-filename-extension': 'off',
         'react/button-has-type': 'warn',
         'react/destructuring-assignment': 'off',
-        'react/jsx-one-expression-per-line': 'error',
+        'react/jsx-one-expression-per-line': 'off',
         'react/no-access-state-in-setstate': 'warn',
     }
 };
