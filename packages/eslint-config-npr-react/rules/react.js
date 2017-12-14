@@ -16,6 +16,8 @@ module.exports = {
         // <h1>Here is the title</h1>
         // That seems to pretty clearly be one JSX expression on one line...
         'react/jsx-one-expression-per-line': 'off',
+        // This should be an error because violations can actually lead to bugs.
+        'react/no-access-state-in-setstate': 'error',
         // I'd really like to have this on, but the parser seems to flag cases even when
         // there is a clear htmlFor on a label that matches up with the ID of another
         // element. Turn this on when it parses better.
