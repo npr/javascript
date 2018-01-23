@@ -43,4 +43,4 @@ If you use yarn, run `npm info "@npr/eslint-config-npr-base@latest" peerDependen
     npm install --save-dev @npr/eslint-config-npr-base eslint@^#.#.# eslint-plugin-import@^#.#.#
     ```
 
-2. Add `"extends": "@npr/esling-config-npr-base"` to your .eslintrc.
+2. Add `"extends": "@npr/eslint-config-npr-base"` to your .eslintrc.
